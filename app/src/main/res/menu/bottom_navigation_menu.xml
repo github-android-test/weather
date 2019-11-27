@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bottom_navigation_item_weather"
+        android:icon="@android:drawable/btn_star"
+        android:title="@string/menu_item_weather" />
+
+    <item
+        android:id="@+id/bottom_navigation_item_forecast"
+        android:icon="@android:drawable/btn_star"
+        android:title="@string/menu_item_forecast" />
+
+    <item
+        android:id="@+id/bottom_navigation_item_settings"
+        android:icon="@android:drawable/btn_star"
+        android:title="@string/menu_item_settings" />
+</menu>
