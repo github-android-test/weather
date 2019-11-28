@@ -89,7 +89,6 @@ public class ForecastWeatherFragment extends Fragment {
 
     private void updateUI(ForecastWeatherModel forecastWeatherModel){
         Log.i("WEATHER_LOG", "ForecastWeatherFragment->updateUI()");
-        // TODO Add implementation here !!!
         forecastDataList = ForecastUtil.extractForecastData(forecastWeatherModel);
         adapter.setData(forecastDataList);
     }

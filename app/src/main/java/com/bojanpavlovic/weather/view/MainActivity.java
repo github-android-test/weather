@@ -32,44 +32,6 @@ public class MainActivity extends AppCompatActivity {
         setBottomNavigationBehaviour(bottomNavigationView, viewPager);
         setViewPagerBehaviour(bottomNavigationView, viewPager);
 
-        //================================
-        // TODO Remove later, just for test
-//        Retrofit retrofit = new Retrofit.Builder()
-//                .baseUrl(getString(R.string.API_BASE_URL))
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .build();
-//
-//        IWeatherService weatherService = retrofit.create(IWeatherService.class);
-//
-//        Call<CurrentWeatherModel> call = weatherService.getCurrentWeather("Nis", getString(R.string.APP_ID));
-//        call.enqueue(new Callback<CurrentWeatherModel>() {
-//            @Override
-//            public void onResponse(Call<CurrentWeatherModel> call, Response<CurrentWeatherModel> response) {
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Call<CurrentWeatherModel> call, Throwable t) {
-//
-//            }
-//        });
-
-//        Call<ForecastWeatherModel> call = weatherService.getForecastWeather("Nis", getString(R.string.APP_ID));
-//        call.enqueue(new Callback<ForecastWeatherModel>() {
-//            @Override
-//            public void onResponse(Call<ForecastWeatherModel> call, Response<ForecastWeatherModel> response) {
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Call<ForecastWeatherModel> call, Throwable t) {
-//
-//            }
-//        });
-
-        //================================
-
-
     }
 
     private void setupViewPager(ViewPager viewPager) {

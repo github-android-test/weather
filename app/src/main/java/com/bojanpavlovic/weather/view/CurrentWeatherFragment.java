@@ -1,7 +1,5 @@
 package com.bojanpavlovic.weather.view;
 
-
-import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
