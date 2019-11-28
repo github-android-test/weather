@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.bojanpavlovic.weather.R;
 import com.bojanpavlovic.weather.model.CurrentWeatherModel;
+import com.bojanpavlovic.weather.utils.TemperatureConvertorUtil;
 import com.bojanpavlovic.weather.viewmodel.CurrentWeatherViewModel;
 
 /**
@@ -74,7 +75,7 @@ public class CurrentWeatherFragment extends Fragment {
 
     private void updateUI(CurrentWeatherModel currentWeatherModel){
         float tempAsFloat = currentWeatherModel.getMainDataModel().getTemp();
-        temp = String.valueOf(Math.round(tempAsFloat));
+        temp = TemperatureConvertorUtil.convertToCelsiusText((int)tempAsFloat);
         city = currentWeatherModel.getName();
         tempTextView.setText(temp);
         cityTextView.setText(city);

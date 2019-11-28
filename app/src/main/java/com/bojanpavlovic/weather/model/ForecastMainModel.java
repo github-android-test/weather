@@ -14,11 +14,11 @@ public class ForecastMainModel extends MainDataModel {
         return seaLevel;
     }
 
-    private int getGroundLevel(){
+    public int getGroundLevel(){
         return groundLevel;
     }
 
-    private float getTempKf(){
+    public float getTempKf(){
         return tempKf;
     }
 

@@ -8,23 +8,33 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bojanpavlovic.weather.ForecastRecyclerViewAdapter;
 import com.bojanpavlovic.weather.R;
-import com.bojanpavlovic.weather.model.CurrentWeatherModel;
+import com.bojanpavlovic.weather.model.ExtractedForecastDayData;
 import com.bojanpavlovic.weather.model.ForecastWeatherModel;
-import com.bojanpavlovic.weather.viewmodel.CurrentWeatherViewModel;
+import com.bojanpavlovic.weather.utils.ForecastUtil;
 import com.bojanpavlovic.weather.viewmodel.ForecastWeatherViewModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class ForecastWeatherFragment extends Fragment {
     private ForecastWeatherViewModel forecastWeatherViewModel;
+    private RecyclerView forecastRecyclerView;
+    private RecyclerView.LayoutManager layoutManager;
+    private ForecastRecyclerViewAdapter adapter;
+    private List<ExtractedForecastDayData> forecastDataList;
 
     public ForecastWeatherFragment() {
         // Required empty public constructor
@@ -40,6 +50,9 @@ public class ForecastWeatherFragment extends Fragment {
             public void onChanged(ForecastWeatherModel forecastWeatherModel) {
                 // Update UI !!!
                 Log.i("WEATHER_LOG", "ForecastWeatherFragment->onChanged()");
+                // TODO Convert temp to proper unit
+                // TODO Get min max temps for 5 days
+                // TODO Show to GUI
                 updateUI(forecastWeatherModel);
             }
         });
@@ -64,11 +77,21 @@ public class ForecastWeatherFragment extends Fragment {
     private void initUI(View inflatedView){
         Log.i("WEATHER_LOG", "ForecastWeatherFragment->initUI()");
         // TODO Add implementation here !!!
+        forecastRecyclerView = inflatedView.findViewById(R.id.forecast_recycler_view);
+        forecastRecyclerView.setHasFixedSize(true);
+        // use a linear layout manager
+        layoutManager = new LinearLayoutManager(getContext());
+        forecastRecyclerView.setLayoutManager(layoutManager);
+        adapter = new ForecastRecyclerViewAdapter();
+        forecastRecyclerView.setAdapter(adapter);
+        forecastDataList = new ArrayList<>();
     }
 
     private void updateUI(ForecastWeatherModel forecastWeatherModel){
         Log.i("WEATHER_LOG", "ForecastWeatherFragment->updateUI()");
         // TODO Add implementation here !!!
+        forecastDataList = ForecastUtil.extractForecastData(forecastWeatherModel);
+        adapter.setData(forecastDataList);
     }
 
 

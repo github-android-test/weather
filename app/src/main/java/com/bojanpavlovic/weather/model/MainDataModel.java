@@ -22,15 +22,15 @@ public class MainDataModel {
         return pressure;
     }
 
-    private int getHumidity(){
+    public int getHumidity(){
         return humidity;
     }
 
-    private float getMinTemp(){
+    public float getMinTemp(){
         return minTemp;
     }
 
-    private float getMaxTemp(){
+    public float getMaxTemp(){
         return maxTemp;
     }
 
