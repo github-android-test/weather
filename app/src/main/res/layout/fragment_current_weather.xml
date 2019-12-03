@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.CurrentWeatherFragment"
-    android:background="@drawable/weather_temporary_bgnd">
+    android:background="@drawable/dark_background">
 
 
     <TextView

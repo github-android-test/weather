@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.ForecastWeatherFragment"
-    android:background="@drawable/forecast_bg">
+    android:background="@drawable/dark_background">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/forecast_recycler_view"

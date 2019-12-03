@@ -36,13 +36,11 @@ public class CurrentWeatherFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.i("WEATHER_LOG", "CurrentWeatherFragment->onCreate()");
         weatherViewModel = ViewModelProviders.of(this).get(CurrentWeatherViewModel.class);
         weatherViewModel.getCurrentWeather().observe(this, new Observer<CurrentWeatherModel>() {
             @Override
             public void onChanged(CurrentWeatherModel currentWeatherModel) {
                 // Update UI !!!
-                Log.i("WEATHER_LOG", "CurrentWeatherFragment->onChanged()");
                 updateUI(currentWeatherModel);
             }
         });
@@ -60,13 +58,11 @@ public class CurrentWeatherFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Log.i("WEATHER_LOG", "CurrentWeatherFragment->onViewCreated()");
         tempTextView.setText(temp);
         cityTextView.setText(city);
     }
 
     private void initUI(View inflatedView){
-        Log.i("WEATHER_LOG", "CurrentWeatherFragment->initUI()");
         tempTextView = inflatedView.findViewById(R.id.temperature);
         cityTextView = inflatedView.findViewById(R.id.city);
     }
@@ -77,7 +73,6 @@ public class CurrentWeatherFragment extends Fragment {
         city = currentWeatherModel.getName();
         tempTextView.setText(temp);
         cityTextView.setText(city);
-        Log.i("WEATHER_LOG", "CurrentWeatherFragment->updateUI():: Temp: " + temp + " ,city: " + city);
     }
 
 }

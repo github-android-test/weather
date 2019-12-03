@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.SettingsFragment"
-    android:background="#aaaaaa">
+    android:background="@drawable/dark_background">
 
 
     <TextView
@@ -40,6 +40,7 @@
             android:checked="true"
             android:text="@string/unit_celsius"
             android:textColor="@color/colorWhite"
+            android:buttonTint="@color/colorWhite"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             />
         <RadioButton
@@ -48,6 +49,7 @@
             android:layout_height="wrap_content"
             android:text="@string/unit_fahrenheit"
             android:textColor="@color/colorWhite"
+            android:buttonTint="@color/colorWhite"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             />
 
