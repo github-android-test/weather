@@ -4,6 +4,7 @@ import android.app.Application;
 
 import androidx.lifecycle.LiveData;
 
+import com.bojanpavlovic.weather.TempUnit;
 import com.bojanpavlovic.weather.model.CurrentWeatherModel;
 import com.bojanpavlovic.weather.model.ForecastWeatherModel;
 

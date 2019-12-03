@@ -43,13 +43,11 @@ public class ForecastWeatherFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.i("WEATHER_LOG", "ForecastWeatherFragment->onCreate()");
         forecastWeatherViewModel = ViewModelProviders.of(this).get(ForecastWeatherViewModel.class);
         forecastWeatherViewModel.getForecastWeather().observe(this, new Observer<ForecastWeatherModel>() {
             @Override
             public void onChanged(ForecastWeatherModel forecastWeatherModel) {
                 // Update UI !!!
-                Log.i("WEATHER_LOG", "ForecastWeatherFragment->onChanged()");
                 // TODO Convert temp to proper unit
                 // TODO Get min max temps for 5 days
                 // TODO Show to GUI
@@ -70,12 +68,10 @@ public class ForecastWeatherFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Log.i("WEATHER_LOG", "ForecastWeatherFragment->onViewCreated()");
         // TODO Add implementation here !!!
     }
 
     private void initUI(View inflatedView){
-        Log.i("WEATHER_LOG", "ForecastWeatherFragment->initUI()");
         // TODO Add implementation here !!!
         forecastRecyclerView = inflatedView.findViewById(R.id.forecast_recycler_view);
         forecastRecyclerView.setHasFixedSize(true);
@@ -88,7 +84,6 @@ public class ForecastWeatherFragment extends Fragment {
     }
 
     private void updateUI(ForecastWeatherModel forecastWeatherModel){
-        Log.i("WEATHER_LOG", "ForecastWeatherFragment->updateUI()");
         forecastDataList = ForecastUtil.extractForecastData(forecastWeatherModel);
         adapter.setData(forecastDataList);
     }

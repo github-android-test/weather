@@ -11,8 +11,8 @@ import java.util.Date;
 import java.util.List;
 
 public class ForecastUtil {
-    // Used for calculating min and max temperature on daily basis for 5 days
 
+    // Used for calculating min and max temperature on daily basis for 5 days
     public static List<ExtractedForecastDayData> extractForecastData(ForecastWeatherModel forecastWeatherModel){
         List<ExtractedForecastDayData> minMaxItemContainerList = new ArrayList<>();
         List<ForecastItemModel> items = forecastWeatherModel.getForecastList();

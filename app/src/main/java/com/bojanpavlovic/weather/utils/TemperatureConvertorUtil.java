@@ -1,7 +1,7 @@
 package com.bojanpavlovic.weather.utils;
 
 public class TemperatureConvertorUtil {
-    // Used for converting Celsius to Kelvin and vice versa
+    // Util used for converting Celsius to Kelvin and vice versa
 
     public static String convertToCelsiusText(int temperatureInKelvin){
         float temp = temperatureInKelvin - 273.15f;
