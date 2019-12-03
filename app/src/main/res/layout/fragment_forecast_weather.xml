@@ -5,9 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.ForecastWeatherFragment"
-    android:background="@drawable/forecast_temporary_bgnd">
+    android:background="@drawable/forecast_bg">
 
-    <!-- TODO Later change from 200dp to wrap_content !!! -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/forecast_recycler_view"
         android:layout_width="match_parent"

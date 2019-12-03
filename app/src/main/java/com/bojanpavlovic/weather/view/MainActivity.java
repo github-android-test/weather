@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager = findViewById(R.id.view_pager);
         bottomNavigationView = findViewById(R.id.bottom_navigation_view);
+
         setupViewPager(viewPager);
         setBottomNavigationBehaviour(bottomNavigationView, viewPager);
         setViewPagerBehaviour(bottomNavigationView, viewPager);
